@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self Puzzle — Support & Official Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF6EE;
+      --card-bg: #FFFFFF;
+      --wood-dark: #3E2723;
+      --wood-muted: #6D4C41;
+      --accent-green: #2E7D32;
+      --accent-gold: #D4A373;
+      --accent-gold-light: #FAEDCD;
+      --border-color: #E8DCC4;
+      --text-main: #2D2522;
+      --text-sub: #5C524E;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* Hero Header */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 30px;
+      margin-bottom: 30px;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(62, 39, 35, 0.15);
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FFFDF7, #FAEDCD);
+      border: 3px solid #D4A373;
+      font-size: 48px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--wood-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--wood-muted);
+      max-width: 600px;
+      margin: 0 auto 24px;
+      font-weight: 500;
+    }
+
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--wood-dark);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .card h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--wood-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card p {
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    /* Features Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .feature-item {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .feature-item h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--wood-dark);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-item p {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      margin-bottom: 0;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--wood-dark);
+      margin-bottom: 6px;
+    }
+
+    .faq-a {
+      font-size: 14.5px;
+      color: var(--text-sub);
+      margin-bottom: 0;
+    }
+
+    /* Contact Action Box */
+    .contact-box {
+      background: linear-gradient(135deg, #FFFDF7, #FAEDCD);
+      border: 2px solid var(--accent-gold);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .contact-box h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--wood-dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      font-size: 15px;
+      color: var(--wood-muted);
+      margin-bottom: 20px;
+    }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-green);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
+    }
+
+    .email-btn:hover {
+      background: #256629;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.35);
+    }
+
+    .email-address-text {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--wood-muted);
+      font-weight: 600;
+    }
+
+    /* Privacy Policy Summary */
+    .privacy-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .privacy-list li {
+      padding: 8px 0;
+      font-size: 14.5px;
+      color: var(--text-sub);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .privacy-list li::before {
+      content: "✓";
+      color: var(--accent-green);
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 30px;
+      color: var(--wood-muted);
+      font-size: 13.5px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer a {
+      color: var(--accent-green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      .card { padding: 22px; }
+      .contact-box { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="app-icon">🧩</div>
+      <h1>Self Puzzle</h1>
+      <p>A relaxing, tactile jigsaw experience featuring nostalgic wooden aesthetics, curated galleries, and custom photo puzzles.</p>
+      <div class="badge-row">
+        <span class="badge">🍏 iOS 15.0+ Compatible</span>
+        <span class="badge">✨ Custom Photo Puzzles</span>
+        <span class="badge">📴 Offline Playable</span>
+        <span class="badge">💧 Calming Sounds</span>
+      </div>
+    </header>
+
+    <!-- Support & Contact Box -->
+    <section class="contact-box" id="support">
+      <h2>App Support & Inquiries</h2>
+      <p>Need assistance, found an issue, or have a suggestion to make Self Puzzle even better? We’re always here to help!</p>
+      <a href="mailto:dagemre10@gmail.com?subject=Self%20Puzzle%20Support" class="email-btn">
+        ✉️ Contact Support
+      </a>
+      <div class="email-address-text">
+        Direct Email: <strong>dagemre10@gmail.com</strong>
+      </div>
+    </section>
+
+    <!-- Marketing / About Features -->
+    <section class="card" id="features">
+      <h2>✨ Key Features</h2>
+      <p>Crafted with love for puzzle lovers of all ages, Self Puzzle combines mindful relaxation with flexible challenges.</p>
+      
+      <div class="grid">
+        <div class="feature-item">
+          <h3>📸 Photo to Puzzle</h3>
+          <p>Transform your favorite gallery pictures or camera snapshots into personalized, playable jigsaw puzzles instantly.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🎯 8 Difficulty Levels</h3>
+          <p>From 4x4 (16 pieces) for quick warm-ups up to 20x20 (400 pieces) for dedicated grand masters.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🌿 Sensory Immersion</h3>
+          <p>Gentle water droplet sound effects and tactile haptic vibration feedback for a genuine wooden tabletop feel.</p>
+        </div>
+        <div class="feature-item">
+          <h3>💡 Smart Assist System</h3>
+          <p>Toggle reference ghost boards, magnetic snaps, and use smart hints whenever you need a friendly push.</p>
+        </div>
+        <div class="feature-item">
+          <h3>📴 Play Anywhere Offline</h3>
+          <p>All built-in category puzzles (Animals, Nature, Cities, Art, Letters, Numbers) work seamlessly offline.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🛡️ Family Safe & Clean</h3>
+          <p>Carefully vetted content suitable for players of all generations with non-intrusive ad placement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="card" id="faq">
+      <h2>❓ Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <div class="faq-q">How do I turn my own photos into puzzles?</div>
+        <div class="faq-a">From the main screen, tap "Upload Photo". Select any picture from your device's photo gallery or take a new photo. Choose your preferred piece count and start solving!</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I play without an internet connection?</div>
+        <div class="faq-a">Yes! All standard categories and built-in puzzle libraries are completely accessible offline. An internet connection is only needed when loading rewarded hints or custom photo generation.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I turn sound or vibration off?</div>
+        <div class="faq-a">Tap the Settings (gear icon) on the main menu or during puzzle play. You can freely toggle sound effects, haptic vibrations, and grid overlays on or off.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Are my personal photos uploaded to any server?</div>
+        <div class="faq-a">No. Your privacy is paramount. Custom photos remain stored 100% locally on your device and are never transmitted to external servers.</div>
+      </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section class="card" id="privacy">
+      <h2>🔒 Privacy Policy Summary</h2>
+      <p>Self Puzzle is designed with a strict "privacy-first" architecture:</p>
+      <ul class="privacy-list">
+        <li><strong>No Personal Data Collection:</strong> We do not collect names, phone numbers, email addresses, or location data.</li>
+        <li><strong>Local Photo Processing:</strong> Custom photos chosen from your gallery remain strictly on your device. We never upload or share your photos.</li>
+        <li><strong>Advertising:</strong> We use Google AdMob to display advertisements in accordance with Apple's App Tracking Transparency and privacy guidelines.</li>
+        <li><strong>No Account Required:</strong> You can enjoy the full game without creating an account or signing in.</li>
+      </ul>
+      <p style="margin-top: 14px; font-size: 13.5px; color: var(--wood-muted);">For any privacy-related questions, reach out directly to <strong>dagemre10@gmail.com</strong>.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 EMRE DAG. All rights reserved.</p>
+      <p style="margin-top: 6px;">
+        <a href="#support">Support</a> • 
+        <a href="#features">Features</a> • 
+        <a href="#faq">FAQ</a> • 
+        <a href="#privacy">Privacy</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>
